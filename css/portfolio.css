@@ -1,0 +1,316 @@
+:root {
+  --red-color:#d63447 ;
+  --transition:.3s ;
+  --section-padding:100px ; 
+}
+body {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: "Big Shoulders Stencil", sans-serif;
+  background-color: black;
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+.container .row .col {
+  border: 1px solid;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* Start navbar  */
+.navbar {
+  position: sticky;
+  box-shadow: 0 0 10px #ddd;
+  top: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1000; /* Ensures it stays above other elements */
+  transition: all 0.3s ease-in-out; /* Smooth scrolling effect */
+}
+.navbar .logo {
+  text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.6); /* Right & Bottom Shadow */
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.navbar .icon-bars {
+  border: 1px solid grey;
+  padding: 10px ;
+  border-radius: 5px ;
+  transition: var(--transition);
+}
+.navbar .icon-bars:hover {
+  transform: rotate(-6deg);
+}
+.navbar .menu-header {
+  box-shadow: 0 0 10px black;
+}
+.navbar .menu-body {
+  background-color: #eee;
+}
+.btn-close:focus,
+.btn-close:active {
+  outline: none;
+  box-shadow: 10px 10px 10px black;
+}
+.navbar img {
+  width: 100px ;
+  height: 100px ;
+  object-fit: cover;
+  margin-bottom:20px  ;
+}
+.navbar .nav-link {
+  border-bottom: 1px solid #777; 
+  font-size: 18px ;
+  transition: var(--transition);
+  position: relative;
+}
+.navbar .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .3);
+  transition: var(--transition) ;
+}
+.navbar .nav-link:hover::before {
+  width: 100%;
+  left: 0;
+}
+/* End navbar  */
+/* Start home page  */
+.home {
+  height: 100vh;
+  background-image: url(/images/PicsArt_07-03-09.17.09.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.home .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  z-index: 2;
+}
+.home .content h1 {
+  font-size: 60px ;
+  letter-spacing: 2px ;
+  z-index: 1;
+  position: relative;
+  text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.6); /* Right & Bottom Shadow */
+  font-weight: bold;
+}
+.home .overlay {
+  position: absolute;
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+/* End home page  */
+/* Start about  */
+.main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+/* Underline effect on hover */
+.main-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background: #d63447;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-50%);
+}
+.about img {
+  box-shadow: 0 0 10px #eee;
+}
+.about .content {
+  box-shadow: 0 0 10px 3px  #eee;
+  align-self: center;
+}
+.about .content p {
+  letter-spacing: 1.4px ;
+  line-height: 2;
+}
+/* End about  */
+/* Staart skills  */
+.skills .box {
+  border: 1px solid ;
+  border-radius: 15px ; 
+}
+.skills .box span {
+  position: relative;
+  font-size: 70px ;
+  color: var(--red-color);
+}
+.skills .box span::before {
+  content: '%';
+  position: absolute;
+  top: -15px ;
+  right: -20px ;
+  font-size: 30px ;
+  color: white;
+}
+/* End skills  */
+/* Start html& css projects  */
+.html-css .img-holder {
+  box-shadow:  
+  0px 2px 5px -1px rgba(255, 255, 255, 0.9),  
+  0px 4px 10px -2px rgba(255, 255, 255, 0.7),  
+  0px 6px 15px -3px rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  border-radius: 15px ;
+}
+.html-css .img-holder .content {
+  position: absolute;
+  top: 0;
+  left: -100%; 
+  height: 100%;
+  width: 100%;
+  background-color: var(--red-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+.html-css .img-holder:hover .content {
+  left: 0;
+}
+.html-css .img-holder .content p {
+  border:  1px solid white;
+  padding: 5px 20px ;
+  transition: var(--transition);
+  /* color: white; */
+}
+.html-css .img-holder .content p:hover {
+  transform: translateX(10px );
+}
+/* End html& css projects  */
+/* Start services  */
+.services .box {
+  border: 1px solid;
+  padding: 20px ;
+  height: 250px ;
+  text-align: center;
+  border-radius: 15px;
+}
+.services .box svg {
+  font-size: 50px ;
+  margin: 10px 0;
+  color: var(--red-color);
+}
+.services .box h5 {
+  text-transform: capitalize;
+  margin: 10px 0;
+}
+.services .box p {
+  color: grey;
+}
+.services .alt-text {
+  display: block ;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 0 ;
+  text-transform: capitalize;
+  border-bottom: 2px solid var(--red-color);
+  color: grey;
+}
+/* End services  */
+/* Start bootstrap projcets  */
+
+.bootstrap .box-content {
+  border: 1px solid;
+  box-shadow: 0 0 10px #ddd;
+}
+.bootstrap .box {
+  box-shadow: 0 0 10px #ddd;
+}
+.main-btn {
+  color: white;
+  border: 1px solid white;
+  padding: 5px 20px ;
+  transition: var(--transition);
+}
+.main-btn:hover {
+  color: var(--red-color);
+  border-color: var(--red-color);
+}
+.bootstrap .alt-text {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  border-bottom: 2px solid var(--red-color);
+}
+/* End bootstrap projcets  */
+/* Start contact me  */
+.contact-me button {
+  color: white;
+  display: block;
+  width: fit-content;
+  padding: 10px 80px ;
+  margin:0 auto;
+  border: 1px solid white;
+  transition: var(--transition);
+}
+.contact-me button:hover {
+  color: var(--red-color);
+  border-color: var(--red-color);
+  transform: translateX(5px );
+}
+.contact-me textarea {
+  height: 150px; /* Fixed height for the textarea */
+  width: 100%; /* Full width */
+  resize: none; /* Disable resizing */
+  padding: 10px; /* Padding inside the textarea */
+  border: 1px solid white; /* Border color */; /* Background color */
+  color: white; /* Text color */
+  transition: var(--transition); /* Smooth transition */
+}
+/* End  contact me  * /
+/* Start socail links  */
+.Socail img {
+  width: 80px;
+}
+/* End socail links  */
+/* Start footer  */
+.footer p {
+  text-align: center;
+  border-top: 1px solid white;
+  padding: 15px 0;
+  font-size: 20px ;
+  text-transform: capitalize;
+}
+.footer span {
+  color: var(--red-color);
+}
+/* End  footer  */
+
